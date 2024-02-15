@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Active Directory</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free Website Template" name="keywords" />
+    <meta content="Free Website Template" name="description" />
+
+    <link
+      rel="stylesheet"
+      href="css/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+      <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="index.html" class="navbar-brand px-lg-4 m-0">
+          <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
+        </a>
+        <div class="navbar-nav ml-auto p-4">
+          <a href="index.html" class="nav-item nav-link active">DHCP</a>
+          <a href="ftp.html" class="nav-item nav-link">FTP</a>
+          <a href="smtp.html" class="nav-item nav-link">SMTP</a>
+          <a href="http.html" class="nav-item nav-link">HTTP</a>
+          <a href="active.html" class="nav-item nav-link"
+            >Active Directory y DNS</a
+          >
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div
+      class="container-fluid page-header mb-5 position-relative overlay-bottom"
+    >
+      <div
+        class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+        style="min-height: 400px"
+      >
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">
+          Active Directory y DNS
+        </h1>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid pt-5">
+      <div class="container">
+        <div class="section-title">
+          <h1 class="display-4">
+            Instalación y configuración de Active Directory y DNS.
+          </h1>
+        </div>
+        <div class="row">
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/2.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-download service-icon"></i>
+                  Configurar IP estática
+                </h4>
+                <p class="m-0">
+                  Para establecer una dirección estática, tenemos que ir a
+                  propiedades de Ethernet, buscamos nuestro adaptador, damos
+                  clic derecho en las propiedades y buscamos protocolo IPv 4.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/ip.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-tasks service-icon"></i>
+                  Verificar el proceso de instalación.
+                </h4>
+                <p class="m-0">
+                  Debemos indicarle una dirección estática y asignarle una
+                  máscara de subred, en este caso nuestra dirección IP es.
+                  192.168.1.1 y la máscara 255.255.255.0. En el servidor DNS
+                  dejamos la misma dirección IP.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/7.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-search service-icon"></i>
+                  Instalamos el servicio de Active Directory
+                </h4>
+                <p class="m-0">
+                  Para esto vamos a agregar roles y características. En roles del servidor buscamos servicios de dominio Active Directory. Lo seleccionamos y le damos siguiente, siguiente e instalar.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/10.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-file service-icon"></i>
+                  Configuración de Active Directory
+                </h4>
+                <p class="m-0">
+                  En el asistente para la configuración de servicios de dominio de Active directory, damos clic en agregar un nuevo bosque e indicamos nuestro dominio. En nuestro caso robinaguilar.co y damos lo siguiente.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/11.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-cog service-icon"></i>
+                  Debemos escribir una contraseña de restauración.
+                </h4>
+                <p class="m-0">
+                  Debemos asegurarnos de que sea una contraseña segura y que cumpla con las políticas de Microsoft. Debemos asegurarnos que esté marcada la casilla de servidor del Sistema de nombre de dominio (DNS).
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/12.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-rss service-icon"></i>
+                  Verificamos el nombre de dominio NetBIOS.
+                </h4>
+                <p class="m-0">
+                  Nos pedirá que verifiquemos el nombre del dominio. Si todo está bien, le damos siguiente, siguiente.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/14.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4><i class="fa fa-rss service-icon"></i>Cerrar sesión.</h4>
+                <p class="m-0">
+                  Una vez terminamos de configurar el Active Directory, nos pedirá que cerremos sesión y con esto podremos agregar nuevos usuarios de Active Directory.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/15.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-rss service-icon"></i>
+                  Buscamos Usuarios de Active Directory
+                </h4>
+                <p class="m-0">
+                  Una vez volvamos a iniciar sesión, buscamos usuarios y equipos de Active Directory, en el menú de Windows Server.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="imgRedes/16.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4><i class="fa fa-rss service-icon"></i>Creamos usuarios.</h4>
+                <p class="m-0">
+                  ¡En este apartado podemos crear unidades organizativas y usuarios, para esto damos clic derecho en alguna de las unidades organizativas existentes o creamos una nueva! ¡Una vez allí, nos pedirá que llenemos los datos para crear un nuevo usuario y listo! Tendríamos nuestro dominio y Active Directory configurados.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+        </div>
+      </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+    >
+      <div
+        class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, 0.1) !important"
+      >
+        <p class="mb-2 text-white">
+          Robinson Eduardo Aguilar Puentes - 202010499
+        </p>
+        <p class="mb-2 text-white">Redes de datos</p>
+        <p class="m-0 text-white">
+          Para la universidad
+          <a
+            class="font-weight-bold"
+            href="https://www.uptc.edu.co/sitio/portal/"
+            >UPTC</a
+          >
+          seccional Sogamoso
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

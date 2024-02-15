@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FTP</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <link rel="stylesheet" href="css/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+          <a href="index.html" class="navbar-brand px-lg-4 m-0">
+            <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
+          </a>
+          <div class="navbar-nav ml-auto p-4">
+            <a href="index.html" class="nav-item nav-link active">DHCP</a>
+            <a href="ftp.html" class="nav-item nav-link">FTP</a>
+            <a href="smtp.html" class="nav-item nav-link">SMTP</a>
+            <a href="http.html" class="nav-item nav-link">HTTP</a>
+            <a href="active.html" class="nav-item nav-link"
+              >Active Directory y DNS</a
+            >
+          </div>
+        </nav>
+      </div>
+      <!-- Navbar End -->
+  
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">FTP</h1>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="section-title">
+                <h1 class="display-4">Instalación y configuración de FTP.</h1>
+            </div>
+            <div class="row">
+                <!--Inicio tarjeta-->
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/33.png" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-download service-icon"></i>Instalamos FTP</h4>
+                            <p class="m-0">
+                                Vamos al asistente de roles y características, buscamos la sección de Servidos (IIS), desplegamos el selector y seleccionamos el apartado "Servidor FTP".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin tarjeta-->
+                <!--Inicio tarjeta-->
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/34.png" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-tasks service-icon"></i>Verificar el proceso de instalación.</h4>
+                            <p class="m-0">
+                                Le damos siguiente - siguiente hasta llegar al apartado de instalación, verificamos los servicios que se van a instalar y le damos clic en instalar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin tarjeta-->
+                <!--Inicio tarjeta-->
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/35.png" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-search service-icon"></i>Validar que esté funcionando el HHTTP</h4>
+                            <p class="m-0">
+                                Al instalar el servidor ISS, por defecto se nos instalará lo necesario para el servicio de HTTP. Necesitaremos este apartado para poder terminar el FTP. Para lograr esto debemos acceder a un navegador y escribir la dirección IP del servidor, en nuestro caso 192.168.1.1.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin tarjeta-->
+                <!--Inicio tarjeta-->
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/36.png" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-file service-icon"></i>Agregamos un sitio FTP.</h4>
+                            <p class="m-0">
+                                Para agregar un sitio FTP, nos vamos en al apartado de herramientas. Buscamos la sección de administrador de herramientas de Internet Information Services (IIS). Una vez allí, desplegamos el servidor, la carpeta de sitios y damos clic derecho sobre la carpeta y damos clic en agregar sitio FTP.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin tarjeta-->
+                <!--Inicio tarjeta-->
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/37.png" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-cog service-icon"></i>Configuramos el servicio de FTP.</h4>
+                            <p class="m-0">
+                                En este apartado debemos indicar qué seguridad deseamos, si anónima (no pide credenciales) o básica (pide usuario y contraseña), además le asignamos permisos, en este caso leer y escribir.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin tarjeta-->
+                 <!--Inicio tarjeta-->
+                 <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/38.png" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-rss service-icon"></i>Validamos su funcionamiento.</h4>
+                            <p class="m-0">
+                                Finalmente, nos dirigimos a un navegador, y debemos escribir ftp://(la dirección del servidor), en nuestro caso FTP://192.168.1.1. De esta manera nos mostrará la página FTP, que acabamos de configurar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin tarjeta-->
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+    >
+      <div
+        class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, 0.1) !important"
+      >
+        <p class="mb-2 text-white">
+          Robinson Eduardo Aguilar Puentes - 202010499
+        </p>
+        <p class="mb-2 text-white">Redes de datos</p>
+        <p class="m-0 text-white">
+          Para la universidad
+          <a
+            class="font-weight-bold"
+            href="https://www.uptc.edu.co/sitio/portal/"
+            >UPTC</a
+          >
+          seccional Sogamoso
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
