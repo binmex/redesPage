@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTP - Linux</title>
+    <link
+      rel="stylesheet"
+      href="/../css/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/../css/style.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+      <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="index.html" class="navbar-brand px-lg-4 m-0">
+          <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
+        </a>
+        <div class="navbar-nav ml-auto p-4">
+          <a href="/index.html" class="nav-item nav-link active">Home</a>
+          <a href="/Linux/dhcpLinux.html" class="nav-item nav-link active"
+            >DHCP Linux</a
+          >
+          <a href="/Linux/ftpLinux.html" class="nav-item nav-link">FTP linux</a>
+          <a href="/Linux/smtpLinux.html" class="nav-item nav-link"
+            >SMTP linux</a
+          >
+          <a href="/Linux/httpLinux.html" class="nav-item nav-link"
+            >HTTP linux</a
+          >
+          <a href="/Linux/dnsLinux.html" class="nav-item nav-link">DNS linux</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div
+      class="container-fluid page-header mb-5 position-relative overlay-bottom"
+    >
+      <div
+        class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+        style="min-height: 400px"
+      >
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">
+          HTTP - Linux
+        </h1>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+      <div class="container">
+        <div class="section-title">
+          <h1 class="display-4">Instalación servidor HTTP</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Instalacion de Apache</h1>
+            <p>
+              Para instalar el servidor HTTP, primero debes descargar el paquete
+              apache2 con el comando <strong>apt-get install apache2</strong>
+            </p>
+            <p>
+              Después de haber instalado el paquete, utiliza el comando
+              <strong>service apache2 status</strong> para verificar el estado
+              actual del servicio de HTTP
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/statusApache.png"
+              alt=""
+            />
+          </div>
+
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Verificamos que este funcionando el servicio</h1>
+            <p>
+              Ahora que has confirmado que el servicio está en funcionamiento,
+              puedes usar un navegador web para acceder a la carpeta de inicio
+              del servidor Apache. Esta se encuentra en la dirección IP del
+              servidor que has asignado, que en este caso es 192.168.1.1.
+              También puedes utilizar el nombre de dominio de tu servidor para
+              acceder a él, que en este caso es robinaguilar.co
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/webApache.png"
+              alt=""
+            />
+            <p>
+              Teniendo esto listo podemos pasar a configurar el servidor <strong>FTP</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+    >
+      <div
+        class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, 0.1) !important"
+      >
+        <p class="mb-2 text-white">
+          Robinson Eduardo Aguilar Puentes - 202010499
+        </p>
+        <p class="mb-2 text-white">Redes de datos</p>
+        <p class="m-0 text-white">
+          Para la universidad
+          <a
+            class="font-weight-bold"
+            href="https://www.uptc.edu.co/sitio/portal/"
+            >UPTC</a
+          >
+          seccional Sogamoso
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+
+    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

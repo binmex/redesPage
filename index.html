@@ -1,170 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>DHCP</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Free Website Template" name="keywords" />
-    <meta content="Free Website Template" name="description" />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
     <link rel="stylesheet" href="css/bootstrap-5.3.2-dist/css/bootstrap.min.css">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet" />
-  </head>
+</head>
+<body>
+        <!-- Navbar Start -->
+        <div class="container-fluid p-0 nav-bar">
+            <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+              <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
+              </a>
+              <div class="navbar-nav ml-auto p-4">
+                <a href="/Linux/linux.html" class="nav-item nav-link active">Linux</a>
+                <a href="/windows/dhcp.html" class="nav-item nav-link active">Windows</a>
+              </div>
+            </nav>
+          </div>
+          <!-- Navbar End -->
 
-  <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid p-0 nav-bar">
-      <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
-        <a href="index.html" class="navbar-brand px-lg-4 m-0">
-          <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
-        </a>
-        <div class="navbar-nav ml-auto p-4">
-          <a href="index.html" class="nav-item nav-link active">DHCP</a>
-          <a href="ftp.html" class="nav-item nav-link">FTP</a>
-          <a href="smtp.html" class="nav-item nav-link">SMTP</a>
-          <a href="http.html" class="nav-item nav-link">HTTP</a>
-          <a href="active.html" class="nav-item nav-link"
-            >Active Directory y DNS</a
-          >
-        </div>
-      </nav>
-    </div>
-    <!-- Navbar End -->
-
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
-      <div
-        id="blog-carousel"
-        class="carousel slide overlay-bottom"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="w-100" src="imgRedes/server.jpg" alt="Image" />
-            <div
-              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
-            >
-              <h2 class="text-primary font-weight-medium m-0">
-                Cómo configurar un
-              </h2>
-              <h1 class="display-1 text-white m-0">Windows Server 2012</h1>
+          <div class="container">
+            <h1>Tutorial de Instalación de Servidores Windows y Linux</h1>
+            <p style="text-align: center">
+              Este tutorial explica la instalación de servidores de Windows Server
+              2012 R2 y Linux Server con Debian 12.
+            </p>
+            <div style="display: flex">
+              <div style="margin: 10px; margin-top: 0px;">
+                <a href="/windows/active.html"
+                  ><h2>Windows Server 2012 R2</h2></a
+                >
+                <p style="text-align: justify;">
+                  En este tutorial, se explica el paso a paso de la instalación de un
+                  servidor con Windows Server 2012 R2, incluyendo la configuración de
+                  los siguientes servicios:
+                </p>
+                <ol class="ol-index">
+                  <li>Active Directory</li>
+                  <li>DNS</li>
+                  <li>DHCP</li>
+                  <li>IIS - HTTP</li>
+                  <li>FTP</li>
+                  <li>SMTP</li>
+                </ol>
+              </div>
+              <div style="margin: 10px; margin-top: 0px;">
+                <a href="/Linux/linux.html"><h2>Linux Server Debian 12</h2></a>
+                <p style="text-align: justify">
+                  En este tutorial, se explica el paso a paso de la instalación de un
+                  servidor de Linux con Debian 12, incluyendo la configuración de los
+                  siguientes servicios:
+                </p>
+                <ol class="ol-index">
+                  <li>DNS</li>
+                  <li>DHCP</li>
+                  <li>HTTP</li>
+                  <li>FTP</li>
+                  <li>SMTP</li>
+                </ol>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <!-- Carousel End -->
+          <button class="btn-up" onclick="scrollToTop()"></button>
 
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-      <div class="container">
-        <div class="section-title">
-          <h1 class="display-4">Instalación y configuración de DHCP</h1>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">Ir al asistente de roles y características</h1>
-            <p>
-              Tenemos que ir hasta la sección de roles del servidor y buscar el apartado de Servidor DHCP y le damos clic.
-            </p>
-            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/20.png" alt="" />
-          </div>
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">
-              Confirmamos las características que se van a instalar.
-            </h1>
-            <p>
-              Verificamos qué características se van a instalar y le damos clic en instalar.
-            </p>
-            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/21.png" alt="" />
-          </div>
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">Revisamos el progreso de instalación.</h1>
-            <p>
-              Validamos que se complete la instalación sin errores y le damos clic en cerrar.
-            </p>
-            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/22.png" alt="" />
-          </div>
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">Configurar DHCP</h1>
-            <p>
-              Nos dirigimos a la sección de herramientas y le damos clic en la opción DHCP.
-            </p>
-            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/24.png" alt="" />
-          </div>
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">Creamos un nuevo ámbito</h1>
-            <p>
-              Le colocamos un nombre al nuevo ámbito y una descripción, después damos clic en siguiente.
-            </p>
-            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/25.png" alt="" />
-          </div>
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">Creamos un nuevo ámbito - 2</h1>
-            <p>
-              En este apartado indicaremos desde dónde queremos que inicien y terminen las direcciones IP para nuestro DHCP. Para nuestro caso, inicia en 192.168.1.100 y termina en 192.168.1.254.
-            </p>
-            <img
-              class="img-fluid mb-3 mb-sm-0"
-              src="imgRedes/intervaloIP.png"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">Agregamos exclusiones.</h1>
-            <p>
-              En esta sección indicamos las direcciones IPV4 que deseemos excluir; en nuestro caso, no hay direcciones excluidas. Le damos siguiente y siguiente hasta llegar a la sección de nombre de dominio y servidores DNS.
-            </p>
-            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/26.png" alt="" />
-          </div>
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">Nombre de dominio</h1>
-            <p>
-              Validamos el nombre del dominio y la dirección IP, en nuestro caso 192.168.1.1.
-            </p>
-            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/30.png" alt="" />
-          </div>
-          <div class="col-lg-4 py-0 py-lg-5">
-            <h1 class="mb-3">Activar ámbito</h1>
-            <p>
-              Seleccionamos la casilla de activar este ámbito ahora, y le damos la siguiente. Ya con esto tendríamos instalado y configurado nuestro DHCP.
-            </p>
-            <img class="img-fluid mb-3 mb-sm-0" src="imgRedes/31.png" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- About End -->
-    <!-- Footer Start -->
+              <!-- Footer Start -->
     <div
-      class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+    class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+  >
+    <div
+      class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
+      style="border-color: rgba(256, 256, 256, 0.1) !important"
     >
-      <div
-        class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
-        style="border-color: rgba(256, 256, 256, 0.1) !important"
-      >
-        <p class="mb-2 text-white">
-          Robinson Eduardo Aguilar Puentes - 202010499
-        </p>
-        <p class="mb-2 text-white">Redes de datos</p>
-        <p class="m-0 text-white">
-          Para la universidad
-          <a
-            class="font-weight-bold"
-            href="https://www.uptc.edu.co/sitio/portal/"
-            >UPTC</a
-          >
-          seccional Sogamoso
-        </p>
-      </div>
+      <p class="mb-2 text-white">
+        Robinson Eduardo Aguilar Puentes - 202010499
+      </p>
+      <p class="mb-2 text-white">Redes de datos</p>
+      <p class="m-0 text-white">
+        Para la universidad
+        <a
+          class="font-weight-bold"
+          href="https://www.uptc.edu.co/sitio/portal/"
+          >UPTC</a
+        >
+        seccional Sogamoso
+      </p>
     </div>
-    <!-- Footer End -->
+  </div>
+  <!-- Footer End -->
 
-    <!-- JavaScript Libraries -->
-
-    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
-
-
-  </body>
+          <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

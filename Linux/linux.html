@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux</title>
+    <link
+      rel="stylesheet"
+      href="/../css/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/../css/style.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+      <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="index.html" class="navbar-brand px-lg-4 m-0">
+          <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
+        </a>
+        <div class="navbar-nav ml-auto p-4">
+          <a href="/index.html" class="nav-item nav-link active">Home</a>
+          <a href="/Linux/dhcpLinux.html" class="nav-item nav-link active"
+            >DHCP Linux</a
+          >
+          <a href="/Linux/ftpLinux.html" class="nav-item nav-link">FTP linux</a>
+          <a href="/Linux/smtpLinux.html" class="nav-item nav-link"
+            >SMTP linux</a
+          >
+          <a href="/Linux/httpLinux.html" class="nav-item nav-link"
+            >HTTP linux</a
+          >
+          <a href="/Linux/dnsLinux.html" class="nav-item nav-link">DNS linux</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+      <div
+        id="blog-carousel"
+        class="carousel slide overlay-bottom"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="w-100" src="/../imgRedes/server.jpg" alt="Image" />
+            <div
+              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+            >
+              <h2 class="text-primary font-weight-medium m-0">
+                Cómo configurar un
+              </h2>
+              <h1 class="display-1 text-white m-0">Debian 2012</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+      <div class="container">
+        <div class="section-title">
+          <h1 class="display-4">Configuración de Debian</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Configurar Hostname</h1>
+            <p>
+              Después de instalar Debian 12, inicia sesión con la cuenta root
+              para evitar tener que conceder permisos de administración cada vez
+              que necesites realizar una acción que requiera privilegios
+              elevados. Una vez iniciada la sesión, realiza una comprobación de
+              los nombres de host y los archivos hosts que se hayan configurado
+              durante la instalación. Para verificar el nombre de host, puedes
+              utilizar el siguiente comando en la terminal: 'hostname' Este
+              comando te mostrará el nombre de host actualmente configurado en
+              el sistema.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/hostnameComand.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Verificar archivo de hostname</h1>
+            <p>
+              Verificamos el archivo de configuracion de hostname, para esto
+              utilizamos el siguiente comando: "nano /etc/host", la
+              configuracion debe ser como la siguiente imagen. cambianmos
+              "robinaguilar.edu.co" por el dominio deseado
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/hostsFile.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Configurar IP del servidor.</h1>
+            <p>
+              Luego, procede a configurar la dirección IP del servidor. Para
+              esto, primero desactiva el servicio NetworkManager en caso de que
+              esté activado, para evitar complicaciones en la asignación de
+              direcciones IP estáticas.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/networmanaher.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Si esta activo el NetworkManager.</h1>
+            <p>
+              Si el servicio NetworkManager está activo, utiliza los siguientes
+              comandos: 'systemctl stop NetworkManager' y 'systemctl disable
+              NetworkManager'. Estos comandos detendrán y desactivarán el
+              servicio NetworkManager, asegurando que no interfiera con la
+              configuración de la dirección IP estática.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/stopManager.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Consultamos los adaptadores de red</h1>
+            <p>
+              Una vez confirmado que NetworkManager está desactivado, puedes
+              proceder a configurar la dirección IP del servidor. Para ello,
+              primero utiliza el comando ls /sys/class/net para visualizar los
+              nombres de los adaptadores de red disponibles en tu sistema. Es
+              importante tener en cuenta que deberías tener al menos dos
+              adaptadores de red en la máquina virtual: uno configurado en modo
+              puente (bridged) para acceder a Internet y otro configurado en
+              modo red interna (internal network) para servicios como DNS, DHCP,
+              etc. en nuestro caso el adaptador enp0s8 sera el que usaremos para
+              todo la configuracion de servicios.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/adaptadores.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Configuramos IP</h1>
+            <p>
+              Ya que conoces el nombre de tus adaptadores de red, primero crea
+              una copia del archivo de configuración "interfaces" que se
+              encuentra en /etc/network/. Luego, procede a configurar el
+              adaptador con la dirección IP que desees. En este caso, la
+              dirección IP es 192.168.1.1.
+            </p>
+            <p>
+              Edebemos usar los siguientes comandos,
+              <strong>cp interfaces interfaces.original</strong> , despues
+              <strong>nano interfaces</strong>
+            </p>
+
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/IpConfigurate.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Reiniciamos sistema</h1>
+            <p>
+              Después de realizar la configuración, utiliza el comando "reboot"
+              para reiniciar el servidor o simplemente usa el comando "systemctl
+              restart networking". Luego, realiza pruebas con el comando "ip a"
+              para verificar que la configuración se haya aplicado
+              correctamente. Para reiniciar el sistema usamos el comando<strong>
+                sudo reboot</strong
+              >
+
+              una vez se inicie el sistema entramos a consola y colocamos el
+              siguiente comando
+              <strong>ip a</strong>
+            </p>
+            <p>
+              Ya con esto se finaliza la instalación de Debian 12 en una máquina
+              virtual de VirtualBox. Ahora se puede proceder a la configuración de
+              los diferentes servidores y servicios necesarios para su
+              funcionamiento en una red de dispositivos.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/visualizarIp.png"
+              alt=""
+            />
+            <p>
+              Ya con esto se finaliza la instalación de Debian 12 en una máquina
+              virtual de VirtualBox. Ahora se puede proceder a la configuración de
+              los diferentes servidores y servicios necesarios para su
+              funcionamiento en una red de dispositivos. Se recomienda Seguir con la
+              configuracion de DNS.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+    >
+      <div
+        class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, 0.1) !important"
+      >
+        <p class="mb-2 text-white">
+          Robinson Eduardo Aguilar Puentes - 202010499
+        </p>
+        <p class="mb-2 text-white">Redes de datos</p>
+        <p class="m-0 text-white">
+          Para la universidad
+          <a
+            class="font-weight-bold"
+            href="https://www.uptc.edu.co/sitio/portal/"
+            >UPTC</a
+          >
+          seccional Sogamoso
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+
+    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

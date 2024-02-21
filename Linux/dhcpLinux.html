@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DHCP - Linux</title>
+    <link
+      rel="stylesheet"
+      href="/../css/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/../css/style.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+      <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="index.html" class="navbar-brand px-lg-4 m-0">
+          <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
+        </a>
+        <div class="navbar-nav ml-auto p-4">
+          <a href="/index.html" class="nav-item nav-link active">Home</a>
+          <a href="/Linux/dhcpLinux.html" class="nav-item nav-link active"
+            >DHCP Linux</a
+          >
+          <a href="/Linux/ftpLinux.html" class="nav-item nav-link">FTP linux</a>
+          <a href="/Linux/smtpLinux.html" class="nav-item nav-link"
+            >SMTP linux</a
+          >
+          <a href="/Linux/httpLinux.html" class="nav-item nav-link"
+            >HTTP linux</a
+          >
+          <a href="/Linux/dnsLinux.html" class="nav-item nav-link">DNS linux</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+      <div class="container">
+        <div class="section-title">
+          <h1 class="display-4">Instalación y configuración de DHCP</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Instalar Servidor DHCP</h1>
+            <p>
+              Para instalar el servidor DHCP, primero debes descargar el paquete
+              isc-dhcp-server con el comando "apt-get install isc-dhcp-server".
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/dhcpLinux.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">copia de seguridad</h1>
+            <p>
+              Después de instalar el paquete, primero realiza una copia de
+              seguridad de la configuración original del archivo isc-dhcp-server
+              que se encuentra en el directorio /etc/default.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/copyDhcp.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Modificar archivo isc-dhcp-server.</h1>
+            <p>
+              Ahora que has creado una copia del archivo de configuración
+              original por si surge algún problema, puedes proceder a configurar
+              el archivo isc-dhcp-server. En este archivo, especificarás las
+              interfaces IPv4, en donde debes poner el nombre de la interfaz
+              donde se configuró la IP (en este caso 192.168.1.1).
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/iscDHCP.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Configurar rangos del servidor</h1>
+            <p>
+              Después de hacer la configuración de isc-dhcp-server, primero
+              realiza una copia de seguridad de la configuración original del
+              archivo dhcpd.conf que se encuentra en el directorio /etc/dhcp.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/copyD.png"
+              alt=""
+            />
+            <p>
+              Ahora que has creado una copia del archivo de configuración
+              original por si surge algún problema, puedes proceder a configurar
+              el archivo dhcpd.conf. En este archivo, especificarás los valores
+              de red que se encuentran en la siguiente imágen:
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/dhcpConf.png"
+              alt=""
+            />
+          </div>
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Comprobamos que todo este funcionando</h1>
+            <p>
+              Luego de terminar de configurar el archivo utiliza el comando
+              siguiente para reiniciar el servicio:
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/statusDHCP.png"
+              alt=""
+            />
+            <p>
+              Ya con esto quedaria configurado nuestro sevidor DHCP y podremos
+              pasar con la instalacion del servidor <strong>HTTP</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+    >
+      <div
+        class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, 0.1) !important"
+      >
+        <p class="mb-2 text-white">
+          Robinson Eduardo Aguilar Puentes - 202010499
+        </p>
+        <p class="mb-2 text-white">Redes de datos</p>
+        <p class="m-0 text-white">
+          Para la universidad
+          <a
+            class="font-weight-bold"
+            href="https://www.uptc.edu.co/sitio/portal/"
+            >UPTC</a
+          >
+          seccional Sogamoso
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+
+    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

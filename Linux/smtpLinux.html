@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMTP - Linux</title>
+    <link
+      rel="stylesheet"
+      href="/../css/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/../css/style.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+      <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="index.html" class="navbar-brand px-lg-4 m-0">
+          <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
+        </a>
+        <div class="navbar-nav ml-auto p-4">
+          <a href="/index.html" class="nav-item nav-link active">Home</a>
+          <a href="/Linux/dhcpLinux.html" class="nav-item nav-link active"
+            >DHCP Linux</a
+          >
+          <a href="/Linux/ftpLinux.html" class="nav-item nav-link">FTP linux</a>
+          <a href="/Linux/smtpLinux.html" class="nav-item nav-link"
+            >SMTP linux</a
+          >
+          <a href="/Linux/httpLinux.html" class="nav-item nav-link"
+            >HTTP linux</a
+          >
+          <a href="/Linux/dnsLinux.html" class="nav-item nav-link">DNS linux</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div
+      class="container-fluid page-header mb-5 position-relative overlay-bottom"
+    >
+      <div
+        class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+        style="min-height: 400px"
+      >
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">
+          SMTP - Linux
+        </h1>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+      <div class="container">
+        <div class="section-title">
+          <h1 class="display-4">
+            Instalación y configuracion de servidor SMTP
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Instalamos POSTFIX.</h1>
+            <p>
+              Para instalar el servidor SMTP, primero debes descargar el paquete
+              postfix con el comando "apt-get install postfix".
+              <strong>sudo apt install postfix</strong>
+              Cuando estés instalando Postfix, aparecerá un asistente de
+              instalación en el que debes seleccionar la opción "Sitio web" y
+              especificar el dominio del servidor, que en este caso es
+              luis.com.co. Después de esto, la instalación del servidor
+              continuará.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/configPost.png"
+              alt=""
+            />
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/post2.png"
+              alt=""
+            />
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/post3.png"
+              alt=""
+            />
+          </div>
+
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Realizar copia de seguridad</h1>
+            <p>
+              Después de instalar el paquete, primero realiza una copia de
+              seguridad de la configuración original del archivo main.conf que
+              se encuentra en el directorio /etc/postfix.
+
+              <strong>cp /etc/postfix/main.cf /etc/postfix/main.cf.copy</strong>
+            </p>
+            <p>
+              Una vez que hayas creado una copia de seguridad del archivo de
+              configuración original por si surge algún problema, puedes
+              proceder a configurar el archivo `main.conf`. En este archivo,
+              debes configurar los valores de `myhostname` para que coincida con
+              el host de correos que creaste en la configuración del DNS, en
+              este caso se llama <strong>correo.robinaguilar.co</strong>.
+              También debes revisar la variable
+              <strong>mydestination</strong> para asegurarte de que contenga los
+              dominios correctos. Además, agrega la dirección IP del servidor en
+              <strong>mynetworks</strong> y establece la variable
+              <strong>home_mailbox = Maildir/</strong>.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/fileMainPost.png"
+              alt=""
+            />
+          </div>
+
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Agregamos usuarios</h1>
+            <p>
+              Después de haber revisado que las configuraciones se hayan
+              aplicado correctamente, utiliza el comando `adduser` para crear un
+              nuevo usuario con el cual intercambiar correos.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/adduser.png"
+              alt=""
+            />
+          </div>
+
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Instalamos Dovecot</h1>
+            <p><strong>apt-get install dovecot-core dovecot-imapd</strong></p>
+            <p>
+              Después de instalar los paquetes, primero realiza una copia de
+              seguridad de la configuración original de los archivos
+              10-ssl.conf, 10-auth.conf y 10-mail.conf que se encuentran en el
+              directorio /etc/dovecot/conf.d. Luego procede a configurar los
+              archivos según se muestra a continuación.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/10-ssl.png"
+              alt=""
+            />
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/10-auth.png"
+              alt=""
+            />
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/10-mail.png"
+              alt=""
+            />
+          </div>
+
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Thunderbird</h1>
+            <p>
+              Para el envío de correos podemos usar un cliente Telnet y probar
+              el envío de correos por consola, aunque existe otra opción, la
+              cual es usar las herramientas Thunderbird para realizar la
+              interacción de email más amigable y funcional.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgRedes/thunderbird.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Configuramos Thunderbird</h1>
+            <p>
+              Luego de haber terminado la configuración de Dovecot, reinicia el
+              servicio con el comando <strong>service dovecot reload</strong>. Después de
+              reiniciar el servicio, instala Thunderbird e inicia sesión con las
+              cuentas que creaste para enviar correos de prueba.
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/thunderbird.png"
+              alt=""
+            />
+          </div>
+
+
+
+          <div class="col-lg-4 py-0 py-lg-5">
+            <h1 class="mb-3">Probar.</h1>
+            <p>
+              Una vez están configuradas en la misma red y se halla configurado
+              el Thunderbird de manera correcta, podemos enviarnos correos entre
+              dos usuarios, como se evidencia a continuación:
+            </p>
+            <img
+              class="img-fluid mb-3 mb-sm-0"
+              src="/../imgLinux/envio.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+    >
+      <div
+        class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, 0.1) !important"
+      >
+        <p class="mb-2 text-white">
+          Robinson Eduardo Aguilar Puentes - 202010499
+        </p>
+        <p class="mb-2 text-white">Redes de datos</p>
+        <p class="m-0 text-white">
+          Para la universidad
+          <a
+            class="font-weight-bold"
+            href="https://www.uptc.edu.co/sitio/portal/"
+            >UPTC</a
+          >
+          seccional Sogamoso
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+
+    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DNS en linux - Debian 12</title>
+    <link
+      rel="stylesheet"
+      href="/../css/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/../css/style.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+      <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="index.html" class="navbar-brand px-lg-4 m-0">
+          <h1 class="m-0 display-4 text-uppercase text-white">SERVERS</h1>
+        </a>
+        <div class="navbar-nav ml-auto p-4">
+          <a href="/index.html" class="nav-item nav-link active">Home</a>
+          <a href="/Linux/dhcpLinux.html" class="nav-item nav-link active"
+            >DHCP Linux</a
+          >
+          <a href="/Linux/ftpLinux.html" class="nav-item nav-link">FTP linux</a>
+          <a href="/Linux/smtpLinux.html" class="nav-item nav-link"
+            >SMTP linux</a
+          >
+          <a href="/Linux/httpLinux.html" class="nav-item nav-link"
+            >HTTP linux</a
+          >
+          <a href="/Linux/dnsLinux.html" class="nav-item nav-link">DNS linux</a>
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div
+      class="container-fluid page-header mb-5 position-relative overlay-bottom"
+    >
+      <div
+        class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+        style="min-height: 400px"
+      >
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">
+          Servidor DNS
+        </h1>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid pt-5">
+      <div class="container">
+        <div class="section-title">
+          <h1 class="display-4">
+            Instalación y configuración de servidor DNS.
+          </h1>
+        </div>
+        <div class="row">
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="/../imgLinux/bind9Copy.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-download service-icon"></i>
+                  Instalar bind9
+                </h4>
+                <p class="m-0">
+                  Para instalar el servidor DNS, primero debes descargar los
+                  paquetes bind9 y dnsutils utilizando el comando
+                  <strong>sudo apt-get install bind9</strong>".
+                </p>
+                <p>
+                  Después de instalar los paquetes, primero realiza una copia de
+                  seguridad de la configuración original del archivo
+                  named.conf.local que se encuentra en el directorio /etc/bind.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="/../imgLinux/bindFile.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-tasks service-icon"></i>
+                  Configuracion de zonas.
+                </h4>
+                <p class="m-0">
+                  Ahora que has creado una copia del archivo de configuración
+                  original por si surge algún problema, puedes proceder a
+                  configurar el archivo <strong>named.conf.local.</strong> En
+                  este archivo, especificarás la zona de búsqueda directa y la
+                  zona de búsqueda inversa, lo cual ayudará a resolver de forma
+                  adecuada el nombre de dominio que has elegido.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="/../imgLinux/dbRobin.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-search service-icon"></i>
+                  verificamos zona directa
+                </h4>
+                <p class="m-0">
+                  Después de configurar el archivo de la zona de búsqueda
+                  directa (db.robinaguilar.co) e inversa (db.192.168.1), ingresa
+                  primero a la zona de búsqueda directa y copia esta
+                  configuración, adaptándola a tu caso:
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="/../imgLinux/inversa.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-file service-icon"></i>
+                  Verificamos zona inversa
+                </h4>
+                <p class="m-0">
+                  Se realiza lo mismo que en el paso pasado pero con la zona
+                  inversa, adaptandolo al caso de cada uno:
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="/../imgLinux/named.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-cog service-icon"></i>
+                  check de la configuracion
+                </h4>
+                <p class="m-0">
+                  Después de configurar los archivos correspondientes, puedes
+                  utilizar el comando <strong>named-checkconf</strong> para
+                  verificar que todo esté correcto. Puedes ejecutar el siguiente
+                  comando para verificar la configuración del archivo de zona.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+          <!--Inicio tarjeta-->
+          <div class="col-lg-6 mb-5">
+            <div class="row align-items-center">
+              <div class="col-sm-5">
+                <img
+                  class="img-fluid mb-3 mb-sm-0"
+                  src="/../imgLinux/comprobaciones.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-sm-7">
+                <h4>
+                  <i class="fa fa-rss service-icon"></i>
+                  mas comandos de verificación
+                </h4>
+                <p class="m-0">
+                  podemos aplicar los comandos de la captura para evaluar si la
+                  configuracion fue exitosa. Despues podemos pasar con el DHCP.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--Fin tarjeta-->
+        </div>
+      </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+    >
+      <div
+        class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, 0.1) !important"
+      >
+        <p class="mb-2 text-white">
+          Robinson Eduardo Aguilar Puentes - 202010499
+        </p>
+        <p class="mb-2 text-white">Redes de datos</p>
+        <p class="m-0 text-white">
+          Para la universidad
+          <a
+            class="font-weight-bold"
+            href="https://www.uptc.edu.co/sitio/portal/"
+            >UPTC</a
+          >
+          seccional Sogamoso
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+
+    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
